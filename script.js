@@ -1,7 +1,9 @@
+const myField1 = document.getElementById("title");
+myField1.focus();
+
 const blogForm = document.getElementById('blogForm');
 const blogDisplay = document.getElementById('blogDisplay');
 
-// Create the counter *outside* the submit handler so it persists
 const submissionCounter = (() => {
     let count = 0;
     return () => {
@@ -42,9 +44,9 @@ const validateForm = (event) => {
     console.log("Author:", author);
     console.log("Email:", email);
     console.log("Category:", category);
-    console.log("Content:", contentText); // Use contentText here
+    console.log("Content:", contentText);
 
-    const updatedObject = { ...parsedObject, content: contentText, submissionDate: new Date().toISOString() }; //Add contentText to updatedObject
+    const updatedObject = { ...parsedObject, content: contentText, submissionDate: new Date().toISOString() };
     console.log("Updated Object:", updatedObject);
 
     const currentCount = submissionCounter();
